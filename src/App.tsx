@@ -1,5 +1,3 @@
-import {} from '@fortawesome/free-solid-svg-icons';
-import {} from '@headlessui/react';
 import './App.css';
 import { useState } from 'react';
 import HowToPlayDialog from './components/HowToPlayDialog';

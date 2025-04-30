@@ -5,6 +5,7 @@ import {
   DialogPanel,
   DialogTitle,
 } from '@headlessui/react';
+import * as Tone from 'tone';
 import { IconButton } from './IconButtom';
 
 type DialogProps = {
@@ -13,7 +14,8 @@ type DialogProps = {
 };
 
 const HowToPlayDialog: React.FC<DialogProps> = ({ isOpen, setIsOpen }) => {
-  const close = () => {
+  const close = async () => {
+    await Tone.start();
     setIsOpen(false);
   };
 
@@ -36,7 +38,13 @@ const HowToPlayDialog: React.FC<DialogProps> = ({ isOpen, setIsOpen }) => {
               遊び方
             </DialogTitle>
             <p className="mt-2 text-sm">
-              Spaceキーをタイミングよく押してみてね！
+              ⚠️音が出ます⚠️
+              <br />
+              OKを押してスタート！
+              <br />
+              タイミングよくSpaceを押してね！
+              <br />
+              ※環境によっては譜面が音ズレするかもしれません。
             </p>
             <div className="flex justify-end">
               <IconButton
